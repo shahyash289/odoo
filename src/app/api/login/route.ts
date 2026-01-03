@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     }
 
     const result = await pool.query(
-      "SELECT id, email, password FROM users WHERE email = $1",
+      "SELECT id, email, password, role FROM users WHERE email = $1",
       [email]
     );
 
@@ -36,16 +36,21 @@ export async function POST(req: Request) {
       );
     }
 
+    // ✅ role is now correctly included
     const token = signToken({
       userId: user.id,
       email: user.email,
+      role: user.role, // <-- FIX
     });
 
     return NextResponse.json({
       message: "Login successful",
       token,
+      role: user.role, // (optional, useful for frontend)
     });
-  } catch {
+  } catch (error) {
+    console.error("Login error:", error);
+
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
