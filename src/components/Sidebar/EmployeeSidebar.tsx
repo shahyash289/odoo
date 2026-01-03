@@ -78,7 +78,7 @@ export function EmployeeSidebar() {
           className="mt-4 w-full justify-start gap-3 text-red-500 hover:bg-red-500/10"
         >
           <LogOut className="h-4 w-4" />
-          Sign Out
+          SignOut
         </Button>
       </div>
     </aside>
