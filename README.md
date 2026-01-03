@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EmployeeEase - Employee Management System
 
-## Getting Started
+## Project Overview
 
-First, run the development server:
+EmployeeEase is a comprehensive employee management system built with the MERN stack (MongoDB, Express.js, React, Node.js). The application streamlines HR operations with role-based access control, allowing administrators to manage departments, employees, attendance, leave requests, and salary disbursements, while employees can access their profiles, submit leave requests, view attendance, and check salary information.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## System Architecture
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Backend (Node.js/Express)
+- **RESTful API Structure**: Organized modular routes for authentication, employees, departments, attendance, leaves, and salaries
+- **MongoDB Integration**: Schema-based data models using Mongoose
+- **Authentication**: JWT-based authentication with role-based access control
+- **Middleware**: Custom middleware for route protection and request validation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend (React/TypeScript)
+- **Component-Based UI**: Built with functional components and React hooks
+- **TypeScript Integration**: Type-safe code with interfaces for data models
+- **State Management**: Context API for global state management (authentication)
+- **Routing**: React Router for navigation with protected routes
+- **UI Design**: Custom Tailwind CSS components with responsive design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key Features
 
-## Learn More
+### Admin Dashboard
+- Dashboard overview with real-time statistics (employee count, departments, payroll)
+- Employee management (add, edit, view, delete)
+- Department management (create, update, delete)
+- Leave management (approve/reject requests)
+- Attendance tracking and reporting
+- Salary management (calculate, disburse, view history)
 
-To learn more about Next.js, take a look at the following resources:
+### Employee Portal
+- Personal profile management
+- Leave requests submission and tracking
+- Attendance view
+- Salary statement access
+- Department information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technical Highlights
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Authentication**: Secure JWT implementation with refresh tokens
+- **Data Validation**: Server-side validation for all API requests
+- **Error Handling**: Comprehensive error handling on both client and server
+- **Responsive Design**: Mobile-first approach using Tailwind CSS
+- **API Organization**: Clean separation of controllers, routes, and models
+- **TypeScript**: Type safety throughout the React application
 
-## Deploy on Vercel
+## Development Approach
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project follows a modular architecture pattern where:
+- Backend routes are organized by feature domain
+- Frontend components are structured by functionality
+- Reusable UI components are separated from business logic
+- API calls are centralized and error-handled consistently
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This architecture ensures maintainability, scalability, and separation of concerns throughout the application.
