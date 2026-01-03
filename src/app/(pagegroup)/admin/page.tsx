@@ -1,7 +1,7 @@
 import react from "react";
 
 const App = () => {
-  return <div>Hello, Employee</div>;
+  return <div>Hello, Admin</div>;
 }       
 
 export default App;
