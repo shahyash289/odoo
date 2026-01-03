@@ -1,7 +1,0 @@
-import react from "react";
-
-const App = () => {
-  return <div>Hello, Employee</div>;
-}       
-
-export default App;
